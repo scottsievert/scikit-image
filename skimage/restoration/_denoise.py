@@ -482,7 +482,7 @@ def _wavelet_threshold(img, wavelet, threshold=None, sigma=None, mode='soft',
 
 
 def denoise_wavelet(img, sigma=None, wavelet='db1', mode='soft',
-                    wavelet_levels=None, multichannel=False,
+                    wavelet_levels=None, multichannel=True,
                     convert2ycbcr=False):
     """Perform wavelet denoising on an image.
 
@@ -510,7 +510,7 @@ def denoise_wavelet(img, sigma=None, wavelet='db1', mode='soft',
         three less than the maximum number of possible decomposition levels.
     multichannel : bool, optional
         Apply wavelet denoising separately for each channel (where channels
-        correspond to the final axis of the array).
+        correspond to the final axis of the array), defaults to True.
     convert2ycbcr : bool, optional
         If True and multichannel True, do the wavelet denoising in the YCbCr
         colorspace instead of the RGB color space. This typically results in
